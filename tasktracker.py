@@ -10,10 +10,19 @@ if not os.path.exists(FILE_NAME):
      with open(FILE_NAME , "w") as file:
           json.dump([], file)
 
-print(" == Task Tracker ==")
-tasks = [{"id": 0 , "name": "Play Game" , "description": "Beat Richy" , "status": "todo" , "createdAt": datetime.datetime.now() , "updatedAt": datetime.datetime.now()},
-         {"id": 1 , "name": "Go to church" , "description": "Pray to Good" , "status": "in-progress" , "createdAt": datetime.datetime.now() , "updatedAt": datetime.datetime.now()}
-         ]
+#Load tasks
+def loadTask():
+     with open(FILE_NAME, "r") as file:
+          return json.load(file)
+
+tasks = loadTask()
+
+#Save tasks
+def saveTasks():
+     with open(FILE_NAME, "w") as file:
+          json.dump(tasks, file, indent=4)
+
+print(" == Task Tracker == ")
 
 
 def addTask():
