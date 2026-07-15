@@ -56,6 +56,40 @@ def displayTask():
           print(f"{num}. Name: {task["name"]}, Id: {task["id"]}")
           num += 1
 
+while True:
+    print()
+    print("Select 1 to add Task")
+    print("Select 2 to View Tasks")
+    print("Select 3 to Update Task")
+    print("Select 4 to Delete Task ")
+    print("Select 5 to Exit Programm")
+    print()
+
+    operation = int(input("Choose operation: "))
+    match operation:
+         case 1:
+              addTask()
+         case 2:
+              displayTask()
+         case 3:
+              print()
+              for task in tasks:
+                 print(f"TaskId: {task["id"]}, TaskName: {task["name"]}")
+              id = int(input("Select id of task to edit: " ))
+              updateTask(id)
+         case 4:
+              print()
+              for task in tasks:
+                 print(f"Task name: {task["name"]} , taskId: {task["id"]}")
+              
+              task_to_delete = int(input("Enter the id of task to delete: "))
+              deleteTask(task_to_delete)
+         case 5:
+              print("Exiting Program...")
+              break
+         case _:
+              print("Invalid Operation")
+
 
 
      
