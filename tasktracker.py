@@ -3,7 +3,12 @@ import json
 import os
 import sys
 
+FILE_NAME = "task.json"
 
+#Create JSON file if it doesnt exist
+if not os.path.exists(FILE_NAME):
+     with open(FILE_NAME , "w") as file:
+          json.dump([], file)
 
 print(" == Task Tracker ==")
 tasks = [{"id": 0 , "name": "Play Game" , "description": "Beat Richy" , "status": "todo" , "createdAt": datetime.datetime.now() , "updatedAt": datetime.datetime.now()},
