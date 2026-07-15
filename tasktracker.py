@@ -43,6 +43,12 @@ def updateTask(id):
      task_to_update["status"] = status
      task_to_update["updateAt"] = updated_time
 
+def deleteTask(id):
+    for i, task in enumerate(tasks):
+        if task["id"] == id:
+            tasks.pop(i)
+            print(f"Task with ID {id} deleted!")
+            return
 
 
 
