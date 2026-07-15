@@ -22,6 +22,13 @@ def saveTasks():
      with open(FILE_NAME, "w") as file:
           json.dump(tasks, file, indent=4)
 
+def generateId():
+     if len(tasks) == 0:
+          return 1
+     else:
+          return max(task["id"] for task in tasks) + 1
+          
+
 print(" == Task Tracker == ")
 
 
