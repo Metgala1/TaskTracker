@@ -50,6 +50,12 @@ def deleteTask(id):
             print(f"Task with ID {id} deleted!")
             return
 
+def displayTask():
+     num = 1
+     for task in tasks:
+          print(f"{num}. Name: {task["name"]}, Id: {task["id"]}")
+          num += 1
+
 
 
      
