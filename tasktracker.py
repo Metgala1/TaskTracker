@@ -24,6 +24,26 @@ def addTask():
         tasks.append(myTask)
         id += 1
 
+def updateTask(id):
+     task_to_update = {}
+     for task in tasks:
+          if task["id"] == id:
+               task_to_update = task
+     print("Updating task: ", task_to_update["id"])
+     print("Current task name: ", task_to_update["name"])
+     print("Current task description: ", task_to_update["description"])
+
+     new_name = input("Edit name: ")
+     new_description = input("Enter new description")
+     status = input("Update status: ")
+     updated_time = datetime.datetime.now()
+
+     task_to_update["name"] = new_name
+     task_to_update["description"] = new_description
+     task_to_update["status"] = status
+     task_to_update["updateAt"] = updated_time
+
+
 
 
      
